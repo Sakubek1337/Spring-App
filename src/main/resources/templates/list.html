@@ -1,31 +1,51 @@
 <html xmlns:th="http://www.thymeleaf.org/">
 
     <head>
-        <title>AYYYOOOo</title>
+        <title>Main</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+
     </head>
 
     <body>
-        <div>
-            <h2>List of employees</h2>
+        <div class="container">
+            <h2>List of visitors' favorite footballers</h2>
             <hr/>
+            <a th:href="@{/addFootballerForm}" class="btn btn-primary mb-2">Add Footballer</a>
 
-            <table border="1">
+            <table class="table table-bordered table-striped" id="list-table">
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Email</th>
-                        <th>Department</th>
+                        <th>Team</th>
+                        <th>Number</th>
+                        <th>Visitor's name</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="employee : ${employees}">
-                        <td th:text="${employee.name}"></td>
-                        <td th:text="${employee.email}"></td>
-                        <td th:text="${employee.department}"></td>
+                    <tr th:each="footballer : ${footballers}">
+                        <td th:text="${footballer.name}"></td>
+                        <td th:text="${footballer.team}"></td>
+                        <td th:text="${footballer.number}"></td>
+                        <td th:text="${footballer.fan_name}"></td>
+                        <td>
+                            <a th:href="@{/showUpdateForm(footballerId=${footballer.id})}"
+                               class="btn btn-info">Update</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#list-table").DataTable();
+            })
+        </script>
     </body>
 
 </html>
