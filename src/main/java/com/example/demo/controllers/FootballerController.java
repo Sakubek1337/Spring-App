@@ -19,8 +19,16 @@ public class FootballerController {
     @Autowired
     private FootballerRepo eRepo;
 
-    @GetMapping({"/", "/main"})
+    @GetMapping( "/main")
     public ModelAndView show(){
+        ModelAndView mav = new ModelAndView("list");
+        List<Footballer> list = eRepo.findAll();
+        mav.addObject("footballers", list);
+        return mav;
+    }
+
+    @GetMapping("/")
+    public ModelAndView showAgain(){
         ModelAndView mav = new ModelAndView("list");
         List<Footballer> list = eRepo.findAll();
         mav.addObject("footballers", list);
