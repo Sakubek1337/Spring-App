@@ -9,7 +9,7 @@ Framework: Spring <br>
 
 Framework Dependencies: Thymeleaf, Spring Boot, Spring Web, PostgreSQL, Lombok, Spring Data JPA. <br>
 
-Database: PostgreSQL <br>
+Database: PostgreSQL (ERM diagram is below) <br>
 
 Used libraries: JQuery, Bootstrap <br>
 
@@ -24,7 +24,9 @@ Description: <br>
     - Order table values in descending or ascending order (alphabetically and numerically) <br>
     
     
- Here's some screenshots: <br>
+ Here's ERM diagram and some screenshots: <br>
+ 
+ ![sc0](https://github.com/Sakubek1337/Spring-App/blob/main/screenshotz/sc4.PNG) <br>
  
  ![sc1](https://github.com/Sakubek1337/Spring-App/blob/main/screenshotz/sc1.PNG) <br>
  
