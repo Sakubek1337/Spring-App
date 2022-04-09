@@ -9,6 +9,8 @@ Framework: Spring <br>
 
 Framework Dependencies: Thymeleaf, Spring Boot, Spring Web, PostgreSQL, Lombok, Spring Data JPA. <br>
 
+Database: PostgreSQL <br>
+
 Used libraries: JQuery, Bootstrap <br>
 
 Deployed application link : https://sakubek-april-2022.herokuapp.com (HEROKU)<br>
